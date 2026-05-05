@@ -11,20 +11,20 @@ const Projects = () => {
         {projects.map((p, i) => (
           <div
             key={i}
-            className="group relative p-6 rounded-2xl border border-gray-800 hover:border-indigo-500 transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:-translate-y-2 hover:shadow-xl transition duration-300"
           >
             {/* Status */}
-            <div className="text-xs mb-2 text-gray-400">
+            <div className="text-xs mb-2 text-[var(--subtext)]">
               {p.status === "in-progress" ? "In Progress" : "Draft"}
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-semibold group-hover:text-indigo-400 transition">
+            <h3 className="text-xl font-semibold group-hover:text-indigo-500 transition">
               {p.title}
             </h3>
 
             {/* Description */}
-            <p className="mt-3 text-sm text-gray-400">
+            <p className="mt-3 text-sm text-[var(--subtext)]">
               {p.desc}
             </p>
 
@@ -33,20 +33,20 @@ const Projects = () => {
               {p.tech.map((t, idx) => (
                 <span
                   key={idx}
-                  className="text-xs px-2 py-1 bg-gray-800 rounded"
+                  className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800"
                 >
                   {t}
                 </span>
               ))}
             </div>
 
-            {/* Bottom links */}
+            {/* Links */}
             <div className="flex justify-between items-center mt-6 text-sm">
 
               <a
                 href={p.github || "#"}
                 target="_blank"
-                className="text-indigo-400 hover:underline"
+                className="text-indigo-500 hover:underline"
               >
                 GitHub →
               </a>
@@ -55,12 +55,12 @@ const Projects = () => {
                 <a
                   href={p.live}
                   target="_blank"
-                  className="text-indigo-400 hover:underline"
+                  className="text-indigo-500 hover:underline"
                 >
                   Live →
                 </a>
               ) : (
-                <span className="text-gray-500">
+                <span className="text-[var(--subtext)]">
                   Live soon
                 </span>
               )}

@@ -1,17 +1,23 @@
 const Skills = () => {
-  return (
-    <section className="px-8 py-16 text-center">
-      <h2 className="text-3xl font-bold mb-6">Skills</h2>
+  const skills = ["React", "Tailwind", "Java", "Python"];
 
-      <div className="flex flex-wrap justify-center gap-4">
-        {["React", "Tailwind", "Java", "Python"].map((skill, i) => (
-          <span
+  return (
+    <section className="px-4 sm:px-8 py-20 text-center">
+      <h2 className="text-3xl font-bold mb-12">Skills</h2>
+
+      <div className="flex flex-wrap justify-center gap-6">
+
+        {skills.map((skill, i) => (
+          <div
             key={i}
-            className="px-4 py-2 border rounded-lg hover:bg-primary hover:text-white"
+            className="px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:-translate-y-1 hover:shadow-lg transition"
           >
-            {skill}
-          </span>
+            <span className="text-sm font-medium text-[var(--text)]">
+              {skill}
+            </span>
+          </div>
         ))}
+
       </div>
     </section>
   );
