@@ -8,7 +8,7 @@ const Projects = () => {
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.7 }}
         className="text-3xl sm:text-4xl font-black text-center mb-14"
       >
@@ -23,7 +23,7 @@ const Projects = () => {
             key={i}
             initial={{ opacity: 0, y: 70 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{
               duration: 0.6,
               delay: i * 0.15,

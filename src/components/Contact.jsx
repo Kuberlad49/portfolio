@@ -6,7 +6,7 @@ const Contact = () => {
     >
 
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-indigo-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-indigo-500/10 blur-[70px] rounded-full"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
 
@@ -27,7 +27,7 @@ const Contact = () => {
 
           <a
             href="mailto:kuberlad49@gmail.com"
-            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_35px_rgba(99,102,241,0.25)] transition-all duration-300"
+            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_35px_rgba(99,102,241,0.25)] transition-transform duration-300"
           >
 
             {/* Animated Glow */}
@@ -58,7 +58,7 @@ const Contact = () => {
             href="https://github.com/Kuberlad49"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-300"
+            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-transform duration-300"
           >
 
             {/* Glow */}
@@ -84,7 +84,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/kuber-lad-50a817290/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-300"
+            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-transform duration-300"
           >
 
             {/* Glow */}
