@@ -36,7 +36,7 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[10%] left-[-120px] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-indigo-500/20 blur-[120px] rounded-full"
+        className="absolute top-[10%] left-[-120px] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 blur-[120px] rounded-full"
       />
 
       {/* RIGHT GLOW */}
@@ -47,7 +47,7 @@ const Hero = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-[5%] right-[-120px] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-purple-500/20 blur-[120px] rounded-full"
+        className="absolute bottom-[5%] right-[-120px] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-indigo-500/20 blur-[120px] rounded-full"
       />
 
       {/* CONTENT */}
@@ -60,9 +60,11 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-white/40 dark:bg-white/5 backdrop-blur-md text-sm text-[var(--subtext)] shadow-sm"
         >
+
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
 
           Building modern web experiences
+
         </motion.div>
 
         {/* HEADING */}
@@ -72,13 +74,15 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="mt-8 text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none"
         >
+
           <span className="block">
             Kuber
           </span>
 
-          <span className="block text-indigo-500 mt-2">
+          <span className="block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mt-2">
             Lad
           </span>
+
         </motion.h1>
 
         {/* ROLE */}
@@ -88,11 +92,13 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
           className="mt-6 text-base sm:text-xl text-[var(--subtext)] h-8 font-medium"
         >
+
           {text}
 
           <span className="animate-pulse text-indigo-500">
             |
           </span>
+
         </motion.p>
 
         {/* DESCRIPTION */}
@@ -102,8 +108,10 @@ const Hero = () => {
           transition={{ delay: 0.7 }}
           className="mt-8 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed text-[var(--subtext)]"
         >
+
           I build high-performance web applications with clean UI,
           smooth user experience, and modern frontend architecture.
+
         </motion.p>
 
         {/* BUTTONS */}
@@ -116,7 +124,7 @@ const Hero = () => {
 
           <a
             href="#projects"
-            className="premium-btn group px-7 py-3 rounded-2xl bg-indigo-600 text-white font-medium"
+            className="premium-btn group px-7 py-3 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-medium"
           >
             View Projects
           </a>
@@ -153,8 +161,11 @@ const Hero = () => {
               }}
               className="hero-card"
             >
+
               <h3>{item[0]}</h3>
+
               <p>{item[1]}</p>
+
             </motion.div>
 
           ))}
