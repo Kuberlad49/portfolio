@@ -8,8 +8,8 @@ const Projects = () => {
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
         className="text-3xl sm:text-4xl font-black text-center mb-14"
       >
         My Work
@@ -21,16 +21,24 @@ const Projects = () => {
 
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 70 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.15,
+            }}
+            whileHover={{
+              y: -10,
+              scale: 1.02,
+            }}
             className="group p-6 rounded-3xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-2xl"
           >
 
             <div className="text-xs mb-2 text-[var(--subtext)]">
-              {p.status === "in-progress" ? "In Progress" : "Draft"}
+              {p.status === "in-progress"
+                ? "In Progress"
+                : "Draft"}
             </div>
 
             <h3 className="text-2xl font-bold group-hover:text-indigo-500">

@@ -18,8 +18,8 @@ const Skills = () => {
       <motion.h2
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
         className="text-3xl sm:text-4xl font-black mb-14"
       >
         Skills
@@ -31,13 +31,24 @@ const Skills = () => {
 
           <motion.div
             key={i}
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.05 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 0.5,
+              delay: i * 0.05,
+            }}
             whileHover={{
-              y: -6,
-              scale: 1.05,
+              y: -7,
+              scale: 1.06,
             }}
             className="px-6 py-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm"
           >
