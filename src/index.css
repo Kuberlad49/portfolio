@@ -71,21 +71,49 @@ html {
 }
 
 body {
+
   background: var(--bg);
+
   color: var(--text);
+
   font-family: "Inter", sans-serif;
+
   overflow-x: hidden;
+
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
+
+  min-height: 100vh;
 }
 
 /* ========================= */
-/* GPU OPTIMIZATION */
+/* PERFORMANCE */
 /* ========================= */
 
 .gpu {
   transform: translateZ(0);
   will-change: transform;
+}
+
+img {
+
+  max-width: 100%;
+
+  display: block;
+
+  content-visibility: auto;
+}
+
+section {
+
+  position: relative;
+
+  z-index: 1;
+
+  content-visibility: auto;
+
+  contain-intrinsic-size: 1px 700px;
 }
 
 /* ========================= */
@@ -96,33 +124,34 @@ body {
 
   padding: 1.2rem;
 
-  border-radius: 1.4rem;
+  border-radius: 1.5rem;
 
   border: 1px solid var(--border);
 
-  background: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.42);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
   box-shadow:
-    0 10px 25px rgba(99,102,241,0.06);
+    0 8px 24px rgba(99,102,241,0.06);
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 .dark .hero-card {
-  background: rgba(15,23,42,0.6);
+  background: rgba(15,23,42,0.58);
 }
 
 .hero-card:hover {
-  transform: translateY(-5px);
+
+  transform: translateY(-4px);
 
   box-shadow:
-    0 14px 35px rgba(99,102,241,0.12);
+    0 14px 35px rgba(99,102,241,0.10);
 }
 
 /* ========================= */
@@ -138,9 +167,10 @@ body {
   isolation: isolate;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease;
 }
 
 .premium-btn::before {
@@ -155,13 +185,13 @@ body {
     linear-gradient(
       120deg,
       transparent,
-      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.16),
       transparent
     );
 
   transform: translateX(-120%);
 
-  transition: transform 0.7s ease;
+  transition: transform 0.65s ease;
 
   z-index: -1;
 }
@@ -172,10 +202,10 @@ body {
 
 .premium-btn:hover {
 
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 0 22px rgba(99,102,241,0.18);
+    0 0 24px rgba(99,102,241,0.16);
 }
 
 /* ========================= */
@@ -189,7 +219,7 @@ body {
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 
   100% {
@@ -215,6 +245,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
 
+  border-radius: 999px;
+
   background:
     linear-gradient(
       to bottom,
@@ -222,8 +254,6 @@ body {
       rgba(168,85,247,0.95),
       rgba(236,72,153,0.95)
     );
-
-  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -238,7 +268,7 @@ body {
 }
 
 /* ========================= */
-/* PREMIUM THEME TRANSITION */
+/* PREMIUM TRANSITIONS */
 /* ========================= */
 
 body,
@@ -250,10 +280,10 @@ button,
 span {
 
   transition:
-    background-color 0.28s ease,
-    border-color 0.28s ease,
-    color 0.28s ease,
-    box-shadow 0.28s ease;
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 /* ========================= */
@@ -269,8 +299,10 @@ span {
 
   .backdrop-blur-xl,
   .backdrop-blur-2xl {
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+
+    backdrop-filter: blur(8px) !important;
+
+    -webkit-backdrop-filter: blur(8px) !important;
   }
 
   .float-smooth {
@@ -280,21 +312,11 @@ span {
   * {
     -webkit-tap-highlight-color: transparent;
   }
+
+  section {
+    contain-intrinsic-size: 1px 500px;
+  }
 }
-
-/* ========================= */
-/* PERFORMANCE OPTIMIZATION */
-/* ========================= */
-
-img {
-  content-visibility: auto;
-}
-
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 500px;
-}
-
 
 /* ========================= */
 /* RESPONSIVE FIXES */
@@ -303,7 +325,7 @@ section {
 @media (max-width: 640px) {
 
   h1 {
-    line-height: 1.05 !important;
+    line-height: 1 !important;
   }
 
   .premium-btn {
@@ -312,5 +334,9 @@ section {
 
   section {
     overflow-x: hidden;
+  }
+
+  .hero-card {
+    padding: 1rem;
   }
 }

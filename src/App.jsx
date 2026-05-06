@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Journey from "./components/Journey";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Certificates from "./components/Certificates";
@@ -9,15 +10,30 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
+    <div className="relative overflow-hidden">
+
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certificates />
-      <HireMe />
-      <Contact />
+
+      <main>
+
+        <Hero />
+
+        <About />
+
+        <Journey />
+
+        <Skills />
+
+        <Projects />
+
+        <Certificates />
+
+        <HireMe />
+
+        <Contact />
+
+      </main>
+
     </div>
   );
 }

@@ -10,56 +10,46 @@ const stats = [
 ];
 
 const Hero = () => {
-
   const [text, setText] = useState("");
 
   const fullText = "Frontend Developer • React Focused";
 
   useEffect(() => {
-
     let i = 0;
 
     const interval = setInterval(() => {
-
       setText(fullText.slice(0, i));
-
       i++;
 
       if (i > fullText.length) {
         clearInterval(interval);
       }
-
     }, 35);
 
     return () => clearInterval(interval);
-
   }, []);
 
   return (
-
     <section
       className="
         relative
-        min-h-[88vh]
+        min-h-[92vh]
         flex
         items-center
-        justify-center
         overflow-hidden
         px-5
         sm:px-8
         pt-24
-        pb-14
+        pb-6
       "
     >
-
       {/* Background */}
       <div className="absolute inset-0 bg-[var(--bg)] -z-30"></div>
 
       {/* Grid */}
       <div
         className="
-          absolute
-          inset-0
+          absolute inset-0
           opacity-[0.03]
           dark:opacity-[0.05]
           bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)]
@@ -68,27 +58,16 @@ const Hero = () => {
         "
       />
 
-      {/* Glow Left */}
-      <motion.div
-
-        animate={{
-          y: [0, -14, 0],
-        }}
-
-        transition={{
-          duration: 16,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-
+      {/* LEFT GLOW */}
+      <div
         className="
           absolute
           top-[10%]
-          left-[-180px]
-          w-[320px]
-          h-[320px]
-          sm:w-[380px]
-          sm:h-[380px]
+          left-[-160px]
+          w-[280px]
+          h-[280px]
+          sm:w-[360px]
+          sm:h-[360px]
           bg-gradient-to-br
           from-blue-500/10
           via-purple-500/10
@@ -99,27 +78,16 @@ const Hero = () => {
         "
       />
 
-      {/* Glow Right */}
-      <motion.div
-
-        animate={{
-          y: [0, 14, 0],
-        }}
-
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-
+      {/* RIGHT GLOW */}
+      <div
         className="
           absolute
           bottom-[5%]
-          right-[-180px]
-          w-[320px]
-          h-[320px]
-          sm:w-[380px]
-          sm:h-[380px]
+          right-[-160px]
+          w-[280px]
+          h-[280px]
+          sm:w-[360px]
+          sm:h-[360px]
           bg-gradient-to-br
           from-pink-500/10
           via-purple-500/10
@@ -130,41 +98,27 @@ const Hero = () => {
         "
       />
 
-      {/* CONTENT */}
       <div
         className="
           relative
           z-10
           max-w-7xl
+          mx-auto
           w-full
           grid
           lg:grid-cols-2
-          gap-12
-          xl:gap-16
+          gap-10
+          xl:gap-14
           items-center
         "
       >
-
         {/* LEFT */}
         <div className="text-center lg:text-left">
-
           {/* Badge */}
           <motion.div
-
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 0.45,
-            }}
-
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
             className="
               inline-flex
               items-center
@@ -181,49 +135,31 @@ const Hero = () => {
               text-[var(--subtext)]
             "
           >
-
             <div className="w-2 h-2 rounded-full bg-green-500"></div>
-
             Available for Work
-
           </motion.div>
 
-          {/* Heading */}
+          {/* HEADING */}
           <motion.h1
-
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              duration: 0.7,
-            }}
-
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             className="
-              mt-6
-              text-4xl
-              sm:text-5xl
+              mt-5
+              text-5xl
+              sm:text-6xl
               xl:text-7xl
               font-black
               tracking-tight
               leading-[0.95]
             "
           >
-
-            <span className="block">
-              Kuber
-            </span>
+            <span className="block">Kuber</span>
 
             <span
               className="
                 block
-                mt-2
+                mt-1
                 bg-gradient-to-r
                 from-blue-500
                 via-purple-500
@@ -234,26 +170,15 @@ const Hero = () => {
             >
               Lad
             </span>
-
           </motion.h1>
 
-          {/* Role */}
+          {/* ROLE */}
           <motion.p
-
-            initial={{
-              opacity: 0,
-            }}
-
-            animate={{
-              opacity: 1,
-            }}
-
-            transition={{
-              delay: 0.4,
-            }}
-
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.35 }}
             className="
-              mt-5
+              mt-4
               text-base
               sm:text-lg
               text-[var(--subtext)]
@@ -261,34 +186,17 @@ const Hero = () => {
               font-medium
             "
           >
-
             {text}
-
-            <span className="text-indigo-500">
-              |
-            </span>
-
+            <span className="text-indigo-500">|</span>
           </motion.p>
 
-          {/* Description */}
+          {/* DESCRIPTION */}
           <motion.p
-
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              delay: 0.6,
-            }}
-
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
             className="
-              mt-6
+              mt-5
               max-w-xl
               text-sm
               sm:text-base
@@ -298,51 +206,38 @@ const Hero = () => {
               lg:mx-0
             "
           >
-
             I build high-performance web applications with clean UI,
             smooth user experience, and modern frontend architecture.
-
           </motion.p>
 
           {/* BUTTONS */}
           <motion.div
-
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              delay: 0.8,
-            }}
-
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
             className="
-              mt-9
+              mt-8
               flex
-              flex-wrap
+              flex-col
+              sm:flex-row
               items-center
               justify-center
               lg:justify-start
               gap-3
-              max-w-[380px]
+              w-full
+              sm:w-auto
             "
           >
-
             <a
               href="#projects"
-
               className="
                 premium-btn
-                flex-1
-                min-w-[150px]
+                w-full
+                sm:w-auto
+                min-w-[190px]
                 text-center
-                px-5
-                py-3
+                px-7
+                py-3.5
                 rounded-2xl
                 bg-gradient-to-r
                 from-blue-500
@@ -358,14 +253,14 @@ const Hero = () => {
 
             <a
               href="#contact"
-
               className="
                 premium-btn
-                flex-1
-                min-w-[150px]
+                w-full
+                sm:w-auto
+                min-w-[190px]
                 text-center
-                px-5
-                py-3
+                px-7
+                py-3.5
                 rounded-2xl
                 border
                 border-[var(--border)]
@@ -377,115 +272,53 @@ const Hero = () => {
             >
               Contact Me
             </a>
-
           </motion.div>
 
-          {/* Stats */}
+          {/* STATS */}
           <motion.div
-
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            transition={{
-              delay: 1,
-            }}
-
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
             className="
-              mt-12
+              mt-10
               grid
               grid-cols-2
               sm:grid-cols-4
               gap-4
             "
           >
-
             {stats.map((item, i) => (
-
-              <motion.div
-
-                key={i}
-
-                whileHover={{
-                  y: -3,
-                }}
-
-                transition={{
-                  duration: 0.2,
-                }}
-
-                className="hero-card gpu py-5"
-              >
-
-                <h3 className="font-bold text-lg">
-                  {item[0]}
-                </h3>
+              <div key={i} className="hero-card py-5">
+                <h3 className="font-bold text-lg">{item[0]}</h3>
 
                 <p className="text-sm text-[var(--subtext)] mt-1">
                   {item[1]}
                 </p>
-
-              </motion.div>
-
+              </div>
             ))}
-
           </motion.div>
-
         </div>
 
         {/* RIGHT IMAGE */}
         <motion.div
-
-          initial={{
-            opacity: 0,
-            scale: 0.98,
-          }}
-
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: [0, -6, 0],
-          }}
-
-          transition={{
-            opacity: {
-              duration: 0.7,
-            },
-
-            scale: {
-              duration: 0.7,
-            },
-
-            y: {
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
           className="
             relative
             flex
             justify-center
-            mt-8
+            mt-4
             lg:mt-0
           "
         >
-
-          {/* Glow */}
           <div
             className="
               absolute
-              w-[240px]
-              h-[240px]
-              sm:w-[320px]
-              sm:h-[320px]
+              w-[220px]
+              h-[220px]
+              sm:w-[300px]
+              sm:h-[300px]
               bg-gradient-to-br
               from-blue-500/10
               via-purple-500/10
@@ -495,51 +328,39 @@ const Hero = () => {
             "
           />
 
-          {/* Border */}
           <div
             className="
               relative
               p-[2px]
-              rounded-[34px]
+              rounded-[32px]
               bg-gradient-to-br
               from-blue-500
               via-purple-500
               to-pink-500
-              shadow-[0_20px_60px_rgba(99,102,241,0.16)]
             "
           >
-
             <div
               className="
-                rounded-[32px]
+                rounded-[30px]
                 overflow-hidden
                 bg-[#0b1020]
               "
             >
-
               <img
                 src={profile}
                 alt="Developer Portrait"
-
+                loading="eager"
                 className="
                   w-[220px]
                   sm:w-[290px]
-                  xl:w-[340px]
+                  xl:w-[330px]
                   object-cover
-                  gpu
                 "
-
-                loading="eager"
               />
-
             </div>
-
           </div>
-
         </motion.div>
-
       </div>
-
     </section>
   );
 };
