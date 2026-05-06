@@ -1,47 +1,60 @@
 import projects from "../data/projects";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <section id="projects" className="px-4 sm:px-8 py-20">
-      <h2 className="text-3xl font-bold text-center mb-12">
+    <section id="projects" className="px-4 sm:px-8 py-24">
+
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-3xl sm:text-4xl font-black text-center mb-14"
+      >
         My Work
-      </h2>
+      </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-8">
+
         {projects.map((p, i) => (
-          <div
+
+          <motion.div
             key={i}
-            className="group p-6 rounded-2xl border border-[var(--border)] bg-[var(--card)] hover:-translate-y-2 hover:shadow-xl transition duration-300"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.15 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="group p-6 rounded-3xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-2xl"
           >
-            {/* Status */}
+
             <div className="text-xs mb-2 text-[var(--subtext)]">
               {p.status === "in-progress" ? "In Progress" : "Draft"}
             </div>
 
-            {/* Title */}
-            <h3 className="text-xl font-semibold group-hover:text-indigo-500 transition">
+            <h3 className="text-2xl font-bold group-hover:text-indigo-500">
               {p.title}
             </h3>
 
-            {/* Description */}
-            <p className="mt-3 text-sm text-[var(--subtext)]">
+            <p className="mt-4 text-sm leading-relaxed text-[var(--subtext)]">
               {p.desc}
             </p>
 
-            {/* Tech */}
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2 mt-5">
+
               {p.tech.map((t, idx) => (
                 <span
                   key={idx}
-                  className="text-xs px-2 py-1 rounded bg-gray-100 dark:bg-gray-800"
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-500"
                 >
                   {t}
                 </span>
               ))}
+
             </div>
 
-            {/* Links */}
-            <div className="flex justify-between items-center mt-6 text-sm">
+            <div className="flex justify-between items-center mt-8 text-sm">
 
               <a
                 href={p.github || "#"}
@@ -51,22 +64,14 @@ const Projects = () => {
                 GitHub →
               </a>
 
-              {p.live ? (
-                <a
-                  href={p.live}
-                  target="_blank"
-                  className="text-indigo-500 hover:underline"
-                >
-                  Live →
-                </a>
-              ) : (
-                <span className="text-[var(--subtext)]">
-                  Live soon
-                </span>
-              )}
+              <span className="text-[var(--subtext)]">
+                Live soon
+              </span>
 
             </div>
-          </div>
+
+          </motion.div>
+
         ))}
       </div>
     </section>
