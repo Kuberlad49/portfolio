@@ -58,9 +58,25 @@ const Contact = () => {
             href="https://github.com/Kuberlad49"
             target="_blank"
             rel="noopener noreferrer"
-            className="premium-btn px-6 py-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl hover:text-indigo-500"
+            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-300"
           >
-            GitHub
+
+            {/* Glow */}
+            <span className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-3 font-medium">
+
+              <span className="text-lg">
+                ⚡
+              </span>
+
+              <span className="group-hover:text-indigo-500 transition">
+                GitHub
+              </span>
+
+            </span>
+
           </a>
 
           {/* LinkedIn */}
@@ -68,9 +84,25 @@ const Contact = () => {
             href="https://www.linkedin.com/in/kuber-lad-50a817290/"
             target="_blank"
             rel="noopener noreferrer"
-            className="premium-btn px-6 py-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl hover:text-indigo-500"
+            className="group relative overflow-hidden px-7 py-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl shadow-sm hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-300"
           >
-            LinkedIn
+
+            {/* Glow */}
+            <span className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-3 font-medium">
+
+              <span className="text-lg">
+                🔗
+              </span>
+
+              <span className="group-hover:text-indigo-500 transition">
+                LinkedIn
+              </span>
+
+            </span>
+
           </a>
 
         </div>
