@@ -24,7 +24,7 @@ const Hero = () => {
       if (i > fullText.length) {
         clearInterval(interval);
       }
-    }, 35);
+    }, 28);
 
     return () => clearInterval(interval);
   }, []);
@@ -32,141 +32,95 @@ const Hero = () => {
   return (
     <section
       className="
-        relative
-        min-h-[92vh]
-        flex
-        items-center
-        overflow-hidden
-        px-5
-        sm:px-8
-        pt-24
-        pb-6
-      "
+      relative
+      min-h-[92vh]
+      flex
+      items-center
+      overflow-hidden
+      px-5
+      sm:px-8
+      pt-24
+      pb-12
+      grid-overlay
+    "
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[var(--bg)] -z-30"></div>
+      {/* LEFT AMBIENT */}
+      <div className="purple-glow w-[320px] h-[320px] bg-blue-500/10 top-[8%] left-[-120px]" />
 
-      {/* Grid */}
-      <div
-        className="
-          absolute inset-0
-          opacity-[0.03]
-          dark:opacity-[0.05]
-          bg-[linear-gradient(to_right,#6366f1_1px,transparent_1px),linear-gradient(to_bottom,#6366f1_1px,transparent_1px)]
-          bg-[size:70px_70px]
-          -z-20
-        "
-      />
-
-      {/* LEFT GLOW */}
-      <div
-        className="
-          absolute
-          top-[10%]
-          left-[-160px]
-          w-[280px]
-          h-[280px]
-          sm:w-[360px]
-          sm:h-[360px]
-          bg-gradient-to-br
-          from-blue-500/10
-          via-purple-500/10
-          to-pink-500/10
-          blur-[70px]
-          rounded-full
-          -z-10
-        "
-      />
-
-      {/* RIGHT GLOW */}
-      <div
-        className="
-          absolute
-          bottom-[5%]
-          right-[-160px]
-          w-[280px]
-          h-[280px]
-          sm:w-[360px]
-          sm:h-[360px]
-          bg-gradient-to-br
-          from-pink-500/10
-          via-purple-500/10
-          to-blue-500/10
-          blur-[70px]
-          rounded-full
-          -z-10
-        "
-      />
+      {/* RIGHT AMBIENT */}
+      <div className="purple-glow w-[380px] h-[380px] bg-pink-500/10 bottom-[0%] right-[-160px]" />
 
       <div
         className="
-          relative
-          z-10
-          max-w-7xl
-          mx-auto
-          w-full
-          grid
-          lg:grid-cols-2
-          gap-10
-          xl:gap-14
-          items-center
-        "
+        relative
+        z-10
+        max-w-7xl
+        mx-auto
+        w-full
+        grid
+        lg:grid-cols-[1fr_0.92fr]
+        gap-14
+        items-center
+      "
       >
-        {/* LEFT */}
+        {/* LEFT CONTENT */}
         <div className="text-center lg:text-left">
-          {/* Badge */}
+          {/* BADGE */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             className="
-              inline-flex
-              items-center
-              gap-2
-              px-4
-              py-2
-              rounded-full
-              border
-              border-[var(--border)]
-              bg-white/40
-              dark:bg-white/5
-              backdrop-blur-md
-              text-sm
-              text-[var(--subtext)]
-            "
+            inline-flex
+            items-center
+            gap-2
+            px-4
+            py-2
+            rounded-full
+            border
+            border-[var(--border)]
+            bg-[var(--card)]
+            backdrop-blur-md
+            text-sm
+            text-[var(--subtext)]
+            shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+          "
           >
-            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+
             Available for Work
           </motion.div>
 
-          {/* HEADING */}
+          {/* TITLE */}
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.65 }}
             className="
-              mt-5
-              text-5xl
-              sm:text-6xl
-              xl:text-7xl
-              font-black
-              tracking-tight
-              leading-[0.95]
-            "
+            mt-6
+            text-5xl
+            sm:text-6xl
+            xl:text-7xl
+            font-black
+            tracking-[-3px]
+            leading-[0.92]
+          "
           >
-            <span className="block">Kuber</span>
+            <span className="block text-[var(--text)]">
+              Kuber
+            </span>
 
             <span
               className="
-                block
-                mt-1
-                bg-gradient-to-r
-                from-blue-500
-                via-purple-500
-                to-pink-500
-                bg-clip-text
-                text-transparent
-              "
+              block
+              mt-1
+              bg-gradient-to-r
+              from-blue-500
+              via-purple-500
+              to-pink-500
+              bg-clip-text
+              text-transparent
+            "
             >
               Lad
             </span>
@@ -176,35 +130,35 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.35 }}
+            transition={{ delay: 0.3 }}
             className="
-              mt-4
-              text-base
-              sm:text-lg
-              text-[var(--subtext)]
-              h-8
-              font-medium
-            "
+            mt-4
+            text-base
+            sm:text-lg
+            text-[var(--subtext)]
+            h-8
+            font-medium
+          "
           >
             {text}
-            <span className="text-indigo-500">|</span>
+            <span className="text-purple-400">|</span>
           </motion.p>
 
           {/* DESCRIPTION */}
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.45 }}
             className="
-              mt-5
-              max-w-xl
-              text-sm
-              sm:text-base
-              leading-relaxed
-              text-[var(--subtext)]
-              mx-auto
-              lg:mx-0
-            "
+            mt-5
+            max-w-xl
+            text-sm
+            sm:text-base
+            leading-relaxed
+            text-[var(--subtext)]
+            mx-auto
+            lg:mx-0
+          "
           >
             I build high-performance web applications with clean UI,
             smooth user experience, and modern frontend architecture.
@@ -212,41 +166,33 @@ const Hero = () => {
 
           {/* BUTTONS */}
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.6 }}
             className="
-              mt-8
-              flex
-              flex-col
-              sm:flex-row
-              items-center
-              justify-center
-              lg:justify-start
-              gap-3
-              w-full
-              sm:w-auto
-            "
+            mt-8
+            flex
+            flex-col
+            sm:flex-row
+            items-center
+            justify-center
+            lg:justify-start
+            gap-4
+          "
           >
             <a
               href="#projects"
               className="
-                premium-btn
-                w-full
-                sm:w-auto
-                min-w-[190px]
-                text-center
-                px-7
-                py-3.5
-                rounded-2xl
-                bg-gradient-to-r
-                from-blue-500
-                via-purple-500
-                to-pink-500
-                text-white
-                font-medium
-                shadow-lg
-              "
+              premium-btn
+              primary-btn
+              px-8
+              py-4
+              rounded-2xl
+              text-white
+              font-semibold
+              min-w-[200px]
+              text-center
+            "
             >
               View Projects
             </a>
@@ -254,21 +200,15 @@ const Hero = () => {
             <a
               href="#contact"
               className="
-                premium-btn
-                w-full
-                sm:w-auto
-                min-w-[190px]
-                text-center
-                px-7
-                py-3.5
-                rounded-2xl
-                border
-                border-[var(--border)]
-                bg-[var(--card)]
-                backdrop-blur-md
-                text-[var(--text)]
-                font-medium
-              "
+              premium-btn
+              secondary-btn
+              px-8
+              py-4
+              rounded-2xl
+              font-semibold
+              min-w-[200px]
+              text-center
+            "
             >
               Contact Me
             </a>
@@ -276,20 +216,29 @@ const Hero = () => {
 
           {/* STATS */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 0.8 }}
             className="
-              mt-10
-              grid
-              grid-cols-2
-              sm:grid-cols-4
-              gap-4
-            "
+            mt-12
+            grid
+            grid-cols-2
+            sm:grid-cols-4
+            gap-4
+          "
           >
             {stats.map((item, i) => (
-              <div key={i} className="hero-card py-5">
-                <h3 className="font-bold text-lg">{item[0]}</h3>
+              <div
+                key={i}
+                className="
+                hero-card
+                p-5
+                text-left
+              "
+              >
+                <h3 className="font-bold text-xl">
+                  {item[0]}
+                </h3>
 
                 <p className="text-sm text-[var(--subtext)] mt-1">
                   {item[1]}
@@ -299,63 +248,150 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE SECTION */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
           className="
-            relative
-            flex
-            justify-center
-            mt-4
-            lg:mt-0
-          "
+          relative
+          flex
+          justify-center
+          lg:justify-end
+        "
         >
+          {/* MAIN AMBIENT LIGHT */}
           <div
             className="
-              absolute
-              w-[220px]
-              h-[220px]
-              sm:w-[300px]
-              sm:h-[300px]
-              bg-gradient-to-br
-              from-blue-500/10
-              via-purple-500/10
-              to-pink-500/10
-              blur-[60px]
-              rounded-full
-            "
+            absolute
+            w-[280px]
+            h-[280px]
+            sm:w-[420px]
+            sm:h-[420px]
+            rounded-full
+            bg-gradient-to-br
+            from-blue-500/20
+            via-purple-500/18
+            to-pink-500/18
+            blur-[110px]
+            opacity-70
+          "
           />
 
+          {/* EXTRA SIDE LIGHT */}
           <div
             className="
-              relative
-              p-[2px]
-              rounded-[32px]
-              bg-gradient-to-br
-              from-blue-500
-              via-purple-500
-              to-pink-500
-            "
+            absolute
+            top-[20%]
+            -right-8
+            w-[120px]
+            h-[260px]
+            rounded-full
+            bg-pink-500/10
+            blur-[70px]
+          "
+          />
+
+          {/* FRAME */}
+          <div
+            className="
+            relative
+            float-smooth
+            p-[2px]
+            rounded-[42px]
+            bg-gradient-to-br
+            from-blue-500
+            via-purple-500
+            to-pink-500
+            shadow-[0_20px_80px_rgba(99,102,241,0.22)]
+          "
           >
+            {/* GLASS CARD */}
             <div
               className="
-                rounded-[30px]
-                overflow-hidden
-                bg-[#0b1020]
-              "
+              relative
+              rounded-[40px]
+              bg-[#050816]
+              backdrop-blur-xl
+              overflow-hidden
+              border
+              border-white/10
+            "
             >
+              {/* TOP LIGHT */}
+              <div
+                className="
+                absolute
+                top-0
+                inset-x-0
+                h-24
+                bg-gradient-to-b
+                from-white/10
+                to-transparent
+                z-20
+              "
+              />
+
+              {/* SIDE LIGHT */}
+              <div
+                className="
+                absolute
+                right-0
+                top-0
+                bottom-0
+                w-[1px]
+                bg-gradient-to-b
+                from-transparent
+                via-pink-400/40
+                to-transparent
+                z-20
+              "
+              />
+
+              {/* IMAGE */}
               <img
                 src={profile}
                 alt="Developer Portrait"
                 loading="eager"
                 className="
-                  w-[220px]
-                  sm:w-[290px]
-                  xl:w-[330px]
-                  object-cover
-                "
+                hero-portrait
+                relative
+                z-10
+                w-[250px]
+                sm:w-[340px]
+                xl:w-[390px]
+                object-cover
+                scale-[1.02]
+                brightness-[0.96]
+                contrast-[1.05]
+                saturate-[1.05]
+              "
+              />
+
+              {/* BOTTOM DEPTH */}
+              <div
+                className="
+                absolute
+                bottom-0
+                inset-x-0
+                h-32
+                bg-gradient-to-t
+                from-[#050816]
+                via-[#050816]/70
+                to-transparent
+                z-20
+              "
+              />
+
+              {/* INNER SHADOW */}
+              <div
+                className="
+                absolute
+                inset-0
+                shadow-[inset_0_0_60px_rgba(0,0,0,0.35)]
+                rounded-[40px]
+                z-20
+              "
               />
             </div>
           </div>
