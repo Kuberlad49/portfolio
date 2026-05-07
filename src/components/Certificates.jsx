@@ -8,48 +8,86 @@ import { useState } from "react";
 const certificates = [
   {
     title: "Software Testing Industrial Training",
-
     org: "Vision Academy",
-
     duration: "12 Weeks Internship",
-
     desc:
-      "Completed industrial training focused on JMeter, Jenkins, Postman, GitHub, API testing, and software testing workflows.",
-
+      "Completed industrial training focused on API testing, automation workflows, JMeter, Jenkins, GitHub, Postman, and software testing practices.",
     image: "/certificates/software-testing.jpg",
-
     skills: [
       "JMeter",
       "Jenkins",
       "Postman",
       "GitHub",
-      "Software Testing",
+      "API Testing",
     ],
-
     accent:
-      "from-blue-500 via-violet-500 to-pink-500",
+      "from-[#2563eb] via-[#4f46e5] to-[#7c3aed]",
   },
 
   {
     title: "Data Science Challenge",
-
     org: "Mandi Hariyanna Academy",
-
     duration: "Achievement Certificate",
-
     desc:
-      "Successfully completed a Data Science challenge focused on statistics, machine learning concepts, and data analysis.",
-
+      "Successfully completed a Data Science challenge focused on statistics, machine learning concepts, analytical thinking, and data interpretation.",
     image: "/certificates/data-science.jpg",
-
     skills: [
-      "Data Analysis",
       "Statistics",
       "Machine Learning",
+      "Data Analysis",
     ],
-
     accent:
-      "from-indigo-500 via-purple-500 to-fuchsia-500",
+      "from-[#4338ca] via-[#6d28d9] to-[#9333ea]",
+  },
+
+  {
+    title: "Technical Quiz Participation",
+    org: "Enthuse'26 State Level Event",
+    duration: "Technical Event Participation",
+    desc:
+      "Participated in a state-level technical quiz event focused on logical thinking, technical concepts, and competitive problem-solving.",
+    image: "/certificates/vdf.jpeg",
+    skills: [
+      "Technical Quiz",
+      "Problem Solving",
+      "Competitive Thinking",
+    ],
+    accent:
+      "from-[#0f172a] via-[#1d4ed8] to-[#3b82f6]",
+  },
+
+  {
+    title: "Chess Competition",
+    org: "SVSS Khel Bharari Utsav",
+    duration: "Competition Participation",
+    desc:
+      "Participated in a chess competition demonstrating strategic thinking, patience, concentration, and decision-making abilities.",
+    image: "/certificates/chess.jpeg",
+    skills: [
+      "Chess",
+      "Strategy",
+      "Focus",
+      "Decision Making",
+    ],
+    accent:
+      "from-[#1e293b] via-[#334155] to-[#475569]",
+  },
+
+  {
+    title: "National Level Technical Event",
+    org: "Vishwa Vertex 2K26",
+    duration: "Hackathon & Technical Event",
+    desc:
+      "Participated in a national-level technical event involving innovation challenges, hackathon activities, and collaborative technical learning.",
+    image: "/certificates/hackathon.jpeg",
+    skills: [
+      "Hackathon",
+      "Innovation",
+      "Technical Event",
+      "Collaboration",
+    ],
+    accent:
+      "from-[#111827] via-[#4c1d95] to-[#7e22ce]",
   },
 ];
 
@@ -70,17 +108,17 @@ const Certificates = () => {
       "
     >
 
-      {/* BACKGROUND GLOWS */}
+      {/* BG GLOWS */}
       <div
         className="
           absolute
-          top-10
+          top-0
           left-[-120px]
-          w-[320px]
-          h-[320px]
+          w-[340px]
+          h-[340px]
           rounded-full
-          bg-violet-500/15
-          blur-[120px]
+          bg-violet-500/10
+          blur-[130px]
           pointer-events-none
         "
       />
@@ -90,11 +128,11 @@ const Certificates = () => {
           absolute
           bottom-0
           right-[-100px]
-          w-[280px]
-          h-[280px]
+          w-[300px]
+          h-[300px]
           rounded-full
-          bg-blue-500/15
-          blur-[120px]
+          bg-blue-500/10
+          blur-[130px]
           pointer-events-none
         "
       />
@@ -103,24 +141,10 @@ const Certificates = () => {
 
         {/* HEADER */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-
-          viewport={{
-            once: true,
-          }}
-
-          transition={{
-            duration: 0.45,
-          }}
-
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
           className="text-center"
         >
 
@@ -129,7 +153,7 @@ const Certificates = () => {
               text-sm
               uppercase
               tracking-[0.28em]
-              text-violet-400
+              text-violet-500
               font-medium
             "
           >
@@ -143,6 +167,8 @@ const Certificates = () => {
               sm:text-5xl
               font-black
               tracking-tight
+              dark:text-white
+              text-slate-900
             "
           >
             Certifications
@@ -154,66 +180,56 @@ const Certificates = () => {
               max-w-2xl
               mx-auto
               leading-relaxed
-              text-[var(--subtext)]
+              dark:text-slate-400
+              text-slate-600
             "
           >
-            Certifications and professional
-            training programs that strengthened
-            my development, testing, and
-            analytical capabilities.
+            Certifications, competitions,
+            hackathons, and technical events
+            that strengthened my practical
+            development and analytical skills.
           </p>
 
         </motion.div>
 
-        {/* CARDS */}
+        {/* LIST */}
         <div className="mt-20 space-y-8">
 
           {certificates.map((cert, i) => (
 
             <motion.div
               key={i}
-
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              viewport={{
-                once: true,
-              }}
-
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{
-                duration: 0.45,
-                delay: i * 0.08,
+                duration: 0.4,
+                delay: i * 0.05,
               }}
 
-              whileHover={{
-                y: -5,
-              }}
+              whileHover={{ y: -3 }}
 
               className="
                 relative
                 overflow-hidden
-                rounded-[32px]
+                rounded-[28px]
                 border
-                border-white/10
-                bg-[rgba(10,14,35,0.72)]
-                backdrop-blur-2xl
-                shadow-[0_20px_70px_rgba(0,0,0,0.28)]
+                dark:border-white/10
+                border-black/5
+                dark:bg-[rgba(8,12,30,0.74)]
+                bg-white/72
+                backdrop-blur-xl
+                shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
               "
             >
 
-              {/* Glow */}
+              {/* subtle gradient */}
               <div
                 className={`
                   absolute
                   inset-0
-                  opacity-[0.07]
+                  opacity-[0.03]
                   bg-gradient-to-br
                   ${cert.accent}
                 `}
@@ -223,7 +239,7 @@ const Certificates = () => {
                 className="
                   relative
                   grid
-                  lg:grid-cols-[280px_1fr]
+                  lg:grid-cols-[260px_1fr]
                   gap-8
                   items-center
                   p-6
@@ -231,7 +247,7 @@ const Certificates = () => {
                 "
               >
 
-                {/* LEFT PREVIEW */}
+                {/* PREVIEW */}
                 <div
                   onClick={() =>
                     setSelectedCert(cert)
@@ -244,18 +260,17 @@ const Certificates = () => {
                   "
                 >
 
-                  {/* Glow */}
                   <div
                     className={`
                       absolute
-                      -inset-2
-                      rounded-[28px]
+                      -inset-1
+                      rounded-[24px]
                       bg-gradient-to-br
                       ${cert.accent}
-                      blur-2xl
                       opacity-20
-                      group-hover:opacity-35
+                      blur-xl
                       transition
+                      group-hover:opacity-35
                     `}
                   />
 
@@ -263,10 +278,12 @@ const Certificates = () => {
                     className="
                       relative
                       overflow-hidden
-                      rounded-[26px]
+                      rounded-[22px]
                       border
-                      border-white/10
-                      bg-black/40
+                      dark:border-white/10
+                      border-black/5
+                      bg-white
+                      dark:bg-[#050816]
                     "
                   >
 
@@ -276,27 +293,26 @@ const Certificates = () => {
                       loading="lazy"
                       className="
                         w-full
-                        h-[220px]
+                        h-[210px]
                         object-cover
                         transition-transform
                         duration-700
-                        group-hover:scale-105
+                        group-hover:scale-[1.03]
                       "
                     />
 
-                    {/* Overlay */}
                     <div
                       className="
                         absolute
                         inset-0
                         bg-gradient-to-t
-                        from-black/60
-                        via-black/10
+                        dark:from-black/70
+                        from-black/20
+                        via-transparent
                         to-transparent
                       "
                     />
 
-                    {/* View */}
                     <div
                       className="
                         absolute
@@ -305,26 +321,28 @@ const Certificates = () => {
                         px-4
                         py-2
                         rounded-full
-                        bg-white/10
+                        bg-white/70
+                        dark:bg-black/40
                         backdrop-blur-xl
                         border
-                        border-white/10
-                        text-white
+                        dark:border-white/10
+                        border-black/5
+                        dark:text-white
+                        text-slate-900
                         text-sm
                         font-medium
                       "
                     >
-                      View Certificate
+                      Open Preview
                     </div>
 
                   </div>
 
                 </div>
 
-                {/* RIGHT CONTENT */}
+                {/* CONTENT */}
                 <div>
 
-                  {/* TOP */}
                   <div
                     className="
                       flex
@@ -341,8 +359,8 @@ const Certificates = () => {
                         className="
                           text-sm
                           uppercase
-                          tracking-[0.18em]
-                          text-violet-400
+                          tracking-[0.2em]
+                          text-violet-500
                         "
                       >
                         {cert.org}
@@ -354,7 +372,8 @@ const Certificates = () => {
                           text-3xl
                           font-black
                           leading-tight
-                          text-white
+                          dark:text-white
+                          text-slate-900
                         "
                       >
                         {cert.title}
@@ -364,7 +383,8 @@ const Certificates = () => {
                         className="
                           mt-3
                           text-sm
-                          text-gray-400
+                          dark:text-gray-400
+                          text-slate-500
                         "
                       >
                         {cert.duration}
@@ -372,7 +392,7 @@ const Certificates = () => {
 
                     </div>
 
-                    {/* Badge */}
+                    {/* VERIFIED */}
                     <div
                       className={`
                         px-5
@@ -383,7 +403,7 @@ const Certificates = () => {
                         text-white
                         text-sm
                         font-semibold
-                        shadow-lg
+                        shadow-md
                       `}
                     >
                       Verified
@@ -391,11 +411,12 @@ const Certificates = () => {
 
                   </div>
 
-                  {/* DESCRIPTION */}
+                  {/* DESC */}
                   <p
                     className="
                       mt-7
-                      text-gray-300
+                      dark:text-gray-300
+                      text-slate-600
                       leading-relaxed
                       max-w-2xl
                     "
@@ -423,11 +444,13 @@ const Certificates = () => {
                           py-2
                           rounded-full
                           border
-                          border-white/10
-                          bg-white/[0.04]
+                          dark:border-white/10
+                          border-black/5
+                          dark:bg-white/[0.03]
+                          bg-black/[0.03]
                           text-sm
-                          text-gray-200
-                          hover:bg-white/[0.08]
+                          dark:text-gray-200
+                          text-slate-700
                           transition
                         "
                       >
@@ -457,23 +480,15 @@ const Certificates = () => {
 
           <motion.div
 
-            initial={{
-              opacity: 0,
-            }}
-
-            animate={{
-              opacity: 1,
-            }}
-
-            exit={{
-              opacity: 0,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
 
             className="
               fixed
               inset-0
               z-[9999]
-              bg-black/80
+              bg-black/75
               backdrop-blur-md
               flex
               items-center
@@ -489,37 +504,36 @@ const Certificates = () => {
             <motion.div
 
               initial={{
-                scale: 0.9,
+                scale: 0.94,
                 opacity: 0,
-                y: 20,
               }}
 
               animate={{
                 scale: 1,
                 opacity: 1,
-                y: 0,
               }}
 
               exit={{
-                scale: 0.9,
+                scale: 0.94,
                 opacity: 0,
-                y: 20,
               }}
 
               transition={{
-                duration: 0.25,
+                duration: 0.2,
               }}
 
               className="
                 relative
                 w-full
-                max-w-5xl
+                max-w-6xl
                 rounded-[32px]
                 overflow-hidden
                 border
-                border-white/10
-                bg-[rgba(8,12,30,0.92)]
-                shadow-[0_30px_120px_rgba(0,0,0,0.5)]
+                dark:border-white/10
+                border-black/5
+                dark:bg-[#070b18]
+                bg-white
+                shadow-[0_30px_120px_rgba(0,0,0,0.35)]
               "
 
               onClick={(e) =>
@@ -527,7 +541,7 @@ const Certificates = () => {
               }
             >
 
-              {/* CLOSE */}
+              {/* close */}
               <button
                 onClick={() =>
                   setSelectedCert(null)
@@ -541,11 +555,14 @@ const Certificates = () => {
                   w-12
                   h-12
                   rounded-full
-                  bg-black/50
+                  bg-white/70
+                  dark:bg-black/40
                   backdrop-blur-xl
                   border
-                  border-white/10
-                  text-white
+                  dark:border-white/10
+                  border-black/5
+                  dark:text-white
+                  text-slate-900
                   text-xl
                   hover:scale-105
                   transition
@@ -560,9 +577,12 @@ const Certificates = () => {
                   p-4
                   sm:p-6
                   bg-gradient-to-br
-                  from-[#070b1d]
-                  via-[#0c1333]
-                  to-[#140b24]
+                  dark:from-[#070b1d]
+                  dark:via-[#0c1333]
+                  dark:to-[#140b24]
+                  from-[#f5f7ff]
+                  via-[#eef2ff]
+                  to-[#faf5ff]
                 "
               >
 
