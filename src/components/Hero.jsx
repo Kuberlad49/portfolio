@@ -33,22 +33,21 @@ const Hero = () => {
     <section
       className="
       relative
-      min-h-[92vh]
+      min-h-screen
       flex
       items-center
       overflow-hidden
-      px-5
+      px-6
       sm:px-8
-      pt-24
-      pb-12
+      lg:px-12
+      pt-28
+      pb-16
       grid-overlay
     "
     >
-      {/* LEFT AMBIENT */}
-      <div className="purple-glow w-[320px] h-[320px] bg-blue-500/10 top-[8%] left-[-120px]" />
-
-      {/* RIGHT AMBIENT */}
-      <div className="purple-glow w-[380px] h-[380px] bg-pink-500/10 bottom-[0%] right-[-160px]" />
+      {/* ambient */}
+      <div className="purple-glow w-[320px] h-[320px] bg-blue-500/10 top-[6%] left-[-120px]" />
+      <div className="purple-glow w-[420px] h-[420px] bg-purple-500/10 bottom-[-10%] right-[-140px]" />
 
       <div
         className="
@@ -58,16 +57,17 @@ const Hero = () => {
         mx-auto
         w-full
         grid
-        lg:grid-cols-[1fr_0.92fr]
-        gap-14
+        lg:grid-cols-[1.05fr_0.95fr]
         items-center
+        gap-10
+        xl:gap-16
       "
       >
-        {/* LEFT CONTENT */}
-        <div className="text-center lg:text-left">
-          {/* BADGE */}
+        {/* LEFT */}
+        <div className="relative z-20 text-center lg:text-left">
+          {/* badge */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             className="
@@ -86,27 +86,23 @@ const Hero = () => {
             shadow-[0_8px_30px_rgba(0,0,0,0.08)]
           "
           >
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for Work
           </motion.div>
 
-          {/* TITLE */}
+          {/* title */}
           <motion.h1
-            initial={{ opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
             className="
-            mt-6
-            text-5xl
-            sm:text-6xl
-            xl:text-7xl
+            mt-7
+            leading-[0.9]
+            tracking-[-4px]
             font-black
-            tracking-[-3px]
-            leading-[0.92]
           "
           >
-            <span className="block text-[var(--text)]">
+            <span className="block text-[var(--text)] text-6xl sm:text-7xl xl:text-[6.5rem]">
               Kuber
             </span>
 
@@ -114,6 +110,9 @@ const Hero = () => {
               className="
               block
               mt-1
+              text-6xl
+              sm:text-7xl
+              xl:text-[6.5rem]
               bg-gradient-to-r
               from-blue-500
               via-purple-500
@@ -126,51 +125,52 @@ const Hero = () => {
             </span>
           </motion.h1>
 
-          {/* ROLE */}
+          {/* typing role */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.25 }}
             className="
-            mt-4
-            text-base
-            sm:text-lg
+            mt-5
+            text-lg
+            sm:text-xl
             text-[var(--subtext)]
-            h-8
             font-medium
+            h-8
           "
           >
             {text}
             <span className="text-purple-400">|</span>
           </motion.p>
 
-          {/* DESCRIPTION */}
+          {/* description */}
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
             className="
-            mt-5
-            max-w-xl
-            text-sm
-            sm:text-base
-            leading-relaxed
+            mt-6
+            max-w-[620px]
+            text-[15px]
+            sm:text-[17px]
+            leading-[1.9]
             text-[var(--subtext)]
             mx-auto
             lg:mx-0
           "
           >
             I build high-performance web applications with clean UI,
-            smooth user experience, and modern frontend architecture.
+            smooth interactions, responsive layouts, and modern frontend
+            architecture focused on real user experience.
           </motion.p>
 
-          {/* BUTTONS */}
+          {/* buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="
-            mt-8
+            mt-9
             flex
             flex-col
             sm:flex-row
@@ -190,7 +190,7 @@ const Hero = () => {
               rounded-2xl
               text-white
               font-semibold
-              min-w-[200px]
+              min-w-[210px]
               text-center
             "
             >
@@ -206,7 +206,7 @@ const Hero = () => {
               py-4
               rounded-2xl
               font-semibold
-              min-w-[200px]
+              min-w-[210px]
               text-center
             "
             >
@@ -214,17 +214,18 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* STATS */}
+          {/* stats */}
           <motion.div
-            initial={{ opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.75 }}
             className="
             mt-12
             grid
             grid-cols-2
             sm:grid-cols-4
             gap-4
+            max-w-[760px]
           "
           >
             {stats.map((item, i) => (
@@ -232,7 +233,8 @@ const Hero = () => {
                 key={i}
                 className="
                 hero-card
-                p-5
+                px-5
+                py-5
                 text-left
               "
               >
@@ -248,7 +250,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT IMAGE SECTION */}
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -260,65 +262,69 @@ const Hero = () => {
           lg:justify-end
         "
         >
-          {/* MAIN AMBIENT LIGHT */}
+          {/* ambient glow */}
           <div
             className="
             absolute
-            w-[280px]
-            h-[280px]
-            sm:w-[420px]
-            sm:h-[420px]
+            w-[260px]
+            h-[260px]
+            sm:w-[380px]
+            sm:h-[380px]
             rounded-full
             bg-gradient-to-br
             from-blue-500/20
-            via-purple-500/18
-            to-pink-500/18
-            blur-[110px]
-            opacity-70
+            via-purple-500/20
+            to-pink-500/20
+            blur-[100px]
+            opacity-60
           "
           />
 
-          {/* EXTRA SIDE LIGHT */}
-          <div
-            className="
-            absolute
-            top-[20%]
-            -right-8
-            w-[120px]
-            h-[260px]
-            rounded-full
-            bg-pink-500/10
-            blur-[70px]
-          "
-          />
-
-          {/* FRAME */}
+          {/* frame */}
           <div
             className="
             relative
             float-smooth
             p-[2px]
-            rounded-[42px]
+            rounded-[38px]
             bg-gradient-to-br
             from-blue-500
             via-purple-500
             to-pink-500
-            shadow-[0_20px_80px_rgba(99,102,241,0.22)]
+            shadow-[0_20px_80px_rgba(99,102,241,0.24)]
           "
           >
-            {/* GLASS CARD */}
             <div
               className="
               relative
-              rounded-[40px]
-              bg-[#050816]
-              backdrop-blur-xl
               overflow-hidden
+              rounded-[36px]
+              bg-[#050816]
               border
               border-white/10
             "
             >
-              {/* TOP LIGHT */}
+              {/* image */}
+              <img
+                src={profile}
+                alt="Kuber Lad"
+                loading="eager"
+                className="
+                hero-portrait
+                relative
+                z-10
+                w-[270px]
+                sm:w-[340px]
+                xl:w-[380px]
+                aspect-[3/4]
+                object-cover
+                brightness-[0.98]
+                contrast-[1.04]
+                saturate-[1.02]
+              "
+              />
+
+              {/* top light */}
               <div
                 className="
                 absolute
@@ -332,64 +338,16 @@ const Hero = () => {
               "
               />
 
-              {/* SIDE LIGHT */}
-              <div
-                className="
-                absolute
-                right-0
-                top-0
-                bottom-0
-                w-[1px]
-                bg-gradient-to-b
-                from-transparent
-                via-pink-400/40
-                to-transparent
-                z-20
-              "
-              />
-
-              {/* IMAGE */}
-              <img
-                src={profile}
-                alt="Developer Portrait"
-                loading="eager"
-                className="
-                hero-portrait
-                relative
-                z-10
-                w-[250px]
-                sm:w-[340px]
-                xl:w-[390px]
-                object-cover
-                scale-[1.02]
-                brightness-[0.96]
-                contrast-[1.05]
-                saturate-[1.05]
-              "
-              />
-
-              {/* BOTTOM DEPTH */}
+              {/* bottom depth */}
               <div
                 className="
                 absolute
                 bottom-0
                 inset-x-0
-                h-32
+                h-28
                 bg-gradient-to-t
-                from-[#050816]
-                via-[#050816]/70
+                from-black/60
                 to-transparent
-                z-20
-              "
-              />
-
-              {/* INNER SHADOW */}
-              <div
-                className="
-                absolute
-                inset-0
-                shadow-[inset_0_0_60px_rgba(0,0,0,0.35)]
-                rounded-[40px]
                 z-20
               "
               />

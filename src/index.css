@@ -510,3 +510,31 @@ img {
     animation: none;
   }
 }
+
+.hero-portrait {
+  backface-visibility: hidden;
+  image-rendering: auto;
+}
+
+/* better desktop balance */
+
+@media (min-width: 1400px) {
+
+  .grid-overlay::before {
+    opacity: 0.14;
+  }
+}
+
+/* better mobile hero */
+
+@media (max-width: 768px) {
+
+  .hero-portrait {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .purple-glow {
+    opacity: 0.34;
+  }
+}
