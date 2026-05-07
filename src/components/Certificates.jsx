@@ -1,4 +1,9 @@
-import { motion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import { useState } from "react";
 
 const certificates = [
   {
@@ -49,6 +54,10 @@ const certificates = [
 ];
 
 const Certificates = () => {
+
+  const [selectedCert, setSelectedCert] =
+    useState(null);
+
   return (
     <section
       id="certificates"
@@ -61,8 +70,8 @@ const Certificates = () => {
       "
     >
 
-      {/* Ambient Glow */}
-      <div className="purple-glow w-[300px] h-[300px] bg-purple-500/10 left-[-120px] top-20" />
+      {/* Purple Glow */}
+      <div className="purple-glow w-[340px] h-[340px] bg-purple-500/10 left-[-140px] top-20" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -98,9 +107,9 @@ const Certificates = () => {
           </h2>
 
           <p className="mt-5 max-w-2xl mx-auto text-[var(--subtext)] leading-relaxed">
-            Certifications and training programs that
-            strengthened my practical development and
-            software testing skills.
+            Certifications and training programs
+            that strengthened my development,
+            testing, and analytical skills.
           </p>
 
         </motion.div>
@@ -128,8 +137,8 @@ const Certificates = () => {
               }}
 
               transition={{
-                duration: 0.5,
-                delay: i * 0.1,
+                duration: 0.45,
+                delay: i * 0.08,
               }}
 
               whileHover={{
@@ -140,11 +149,26 @@ const Certificates = () => {
                 hero-card
                 rounded-[30px]
                 overflow-hidden
+                group
+                border
+                border-[var(--border)]
+                bg-[var(--card)]
+                backdrop-blur-xl
               "
             >
 
-              {/* Top Image */}
-              <div className="relative overflow-hidden">
+              {/* Image */}
+              <div
+                className="
+                  relative
+                  overflow-hidden
+                  cursor-pointer
+                "
+
+                onClick={() =>
+                  setSelectedCert(cert)
+                }
+              >
 
                 <img
                   src={cert.image}
@@ -152,24 +176,60 @@ const Certificates = () => {
                   loading="lazy"
                   className="
                     w-full
-                    h-[230px]
+                    h-[240px]
                     object-cover
                     transition-transform
-                    duration-500
-                    hover:scale-[1.03]
+                    duration-700
+                    group-hover:scale-[1.03]
                   "
                 />
 
-                {/* Gradient Overlay */}
+                {/* Overlay */}
                 <div
-                  className={`
+                  className="
                     absolute
                     inset-0
-                    bg-gradient-to-tr
-                    ${cert.accent}
-                    opacity-[0.10]
-                  `}
+                    bg-black/10
+                    group-hover:bg-black/0
+                    transition
+                    duration-500
+                  "
                 />
+
+                {/* Hover Button */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+                    opacity-0
+                    group-hover:opacity-100
+                    transition
+                    duration-300
+                  "
+                >
+
+                  <div
+                    className="
+                      px-5
+                      py-3
+                      rounded-2xl
+                      bg-black/40
+                      backdrop-blur-xl
+                      border
+                      border-white/10
+                      text-white
+                      text-sm
+                      font-medium
+                      shadow-lg
+                    "
+                  >
+                    View Certificate
+                  </div>
+
+                </div>
 
               </div>
 
@@ -177,7 +237,7 @@ const Certificates = () => {
               <div className="p-7">
 
                 {/* Top */}
-                <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-start justify-between gap-4 flex-wrap">
 
                   <div>
 
@@ -202,7 +262,7 @@ const Certificates = () => {
                       bg-gradient-to-r
                       ${cert.accent}
                       text-white
-                      shadow-lg
+                      shadow-md
                     `}
                   >
                     Verified
@@ -251,6 +311,137 @@ const Certificates = () => {
         </div>
 
       </div>
+
+      {/* FULLSCREEN PREVIEW */}
+      <AnimatePresence>
+
+        {selectedCert && (
+
+          <motion.div
+
+            initial={{
+              opacity: 0,
+            }}
+
+            animate={{
+              opacity: 1,
+            }}
+
+            exit={{
+              opacity: 0,
+            }}
+
+            transition={{
+              duration: 0.22,
+            }}
+
+            className="
+              fixed
+              inset-0
+              z-[999]
+              bg-black/70
+              backdrop-blur-[6px]
+              flex
+              items-center
+              justify-center
+              p-4
+              sm:p-6
+            "
+
+            onClick={() =>
+              setSelectedCert(null)
+            }
+          >
+
+            {/* Modal */}
+            <motion.div
+
+              initial={{
+                scale: 0.94,
+                opacity: 0,
+                y: 20,
+              }}
+
+              animate={{
+                scale: 1,
+                opacity: 1,
+                y: 0,
+              }}
+
+              exit={{
+                scale: 0.94,
+                opacity: 0,
+                y: 20,
+              }}
+
+              transition={{
+                duration: 0.22,
+              }}
+
+              className="
+                relative
+                w-full
+                max-w-6xl
+                max-h-[94vh]
+                overflow-hidden
+                rounded-[30px]
+                border
+                border-white/10
+                bg-black/20
+                backdrop-blur-xl
+                shadow-[0_20px_80px_rgba(0,0,0,0.35)]
+              "
+
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+            >
+
+              {/* Close Button */}
+              <button
+                onClick={() =>
+                  setSelectedCert(null)
+                }
+
+                className="
+                  absolute
+                  top-4
+                  right-4
+                  z-20
+                  w-11
+                  h-11
+                  rounded-full
+                  bg-black/45
+                  text-white
+                  text-lg
+                  backdrop-blur-xl
+                  hover:scale-105
+                  transition
+                "
+              >
+                ✕
+              </button>
+
+              {/* Certificate Image */}
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.title}
+                className="
+                  w-full
+                  max-h-[92vh]
+                  object-contain
+                  rounded-[30px]
+                  bg-white
+                "
+              />
+
+            </motion.div>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
 
     </section>
   );
