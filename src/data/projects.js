@@ -1,26 +1,40 @@
 const projects = [
   {
-    title: "ShopZone (In Progress)",
+    title: "DriverTracker App",
 
     desc:
-      "Building a modern e-commerce platform with product browsing, authentication, cart system, and responsive premium UI.",
+      "Android-based driver management and trip tracking application built using Java and SQLite. Includes trip logging, fuel tracking, authentication system, PDF report generation, backup & restore functionality, and modern mobile UI workflows.",
 
-    tech: ["React", "Tailwind", "Node.js"],
+    tech: [
+      "Java",
+      "Android Studio",
+      "SQLite",
+      "XML",
+      "RecyclerView",
+      "Material UI",
+      "PDF Reports",
+    ],
 
-    github: "#",
+    github:
+      "https://github.com/Kuberlad49/DriverTracker-App-Release/releases/tag/v.1.0",
 
-    live: "",
+    live:
+      "https://github.com/Kuberlad49/DriverTracker-App-Release/releases/tag/v.1.0",
 
-    image: "/images/shopzone.png",
+    image: "/images/drivertracker.png",
 
-    status: "in-progress",
+    status: "live",
+
+    featured: true,
+
+    type: "Android Application",
   },
 
   {
     title: "Expense Tracker",
 
     desc:
-      "Responsive expense tracking web application with income management, expense analytics, category tracking, and clean user interface.",
+      "Responsive expense tracking web application with income management, analytics dashboard, category tracking, and clean modern UI optimized for smooth user experience.",
 
     tech: ["HTML", "CSS", "JavaScript"],
 
@@ -33,13 +47,38 @@ const projects = [
     image: "/images/expense-tracker.png",
 
     status: "live",
+
+    featured: false,
+
+    type: "Web Application",
+  },
+
+  {
+    title: "ShopZone (In Progress)",
+
+    desc:
+      "Modern e-commerce platform currently under development with authentication, premium UI system, responsive layouts, product browsing, and scalable frontend architecture.",
+
+    tech: ["React", "Tailwind", "Node.js"],
+
+    github: "#",
+
+    live: "",
+
+    image: "/images/shopzone.png",
+
+    status: "in-progress",
+
+    featured: false,
+
+    type: "E-Commerce",
   },
 
   {
     title: "Calendar App",
 
     desc:
-      "Java-based calendar application with scheduling functionality and modern desktop UI experience.",
+      "Java-based desktop calendar application with scheduling support and clean desktop-oriented interface design.",
 
     tech: ["Java"],
 
@@ -50,6 +89,10 @@ const projects = [
     image: "/images/calendar.png",
 
     status: "draft",
+
+    featured: false,
+
+    type: "Desktop Application",
   },
 ];
 
