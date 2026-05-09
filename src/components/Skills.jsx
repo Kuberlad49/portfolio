@@ -65,13 +65,62 @@ const skillGroups = [
       {
         name: "Java",
         info:
-          "Object-oriented programming, desktop applications, and academic project development.",
+          "Object-oriented programming, desktop applications, and Android application development.",
       },
 
       {
         name: "Python",
         info:
           "Automation, scripting, networking projects, and problem-solving logic.",
+      },
+    ],
+  },
+
+  {
+    title: "Android Development",
+    color: "from-green-500 to-emerald-400",
+
+    skills: [
+      {
+        name: "Android App Development",
+        info:
+          "Building native Android applications using Java and Android Studio with responsive mobile UI, activity lifecycle handling, authentication systems, and structured app architecture.",
+      },
+
+      {
+        name: "Android Studio",
+        info:
+          "Developing, debugging, testing, and managing Android applications using Android Studio development environment.",
+      },
+
+      {
+        name: "SQLite",
+        info:
+          "Local database management for Android applications including structured data storage, trip records, authentication handling, and report management.",
+      },
+
+      {
+        name: "XML Layouts",
+        info:
+          "Designing responsive Android user interfaces using XML layouts, Material Design principles, and adaptive mobile components.",
+      },
+
+      {
+        name: "PDF Report System",
+        info:
+          "Generating and managing downloadable PDF reports inside Android applications for trip history and tracking summaries.",
+      },
+
+      {
+        name: "Mobile UI Optimization",
+        info:
+          "Designing Android interfaces optimized for responsiveness, usability, smooth navigation, and performance across devices.",
+      },
+
+      {
+        name: "Experience",
+        info:
+          "Successfully developed and released 1 complete Android application project with real functionality and APK distribution.",
       },
     ],
   },
@@ -91,6 +140,12 @@ const skillGroups = [
         name: "PostgreSQL",
         info:
           "Advanced SQL database system focused on performance and scalability.",
+      },
+
+      {
+        name: "SQLite",
+        info:
+          "Lightweight embedded database used in Android applications for local data persistence and offline storage.",
       },
     ],
   },
@@ -173,7 +228,7 @@ const Skills = () => {
 
           <p className="mt-5 max-w-2xl mx-auto text-[var(--subtext)] leading-relaxed">
             Technologies and tools I use to build fast,
-            modern, and responsive digital experiences.
+            modern, responsive, and performance-focused digital experiences.
           </p>
 
         </motion.div>
@@ -206,7 +261,7 @@ const Skills = () => {
               }}
             >
 
-              {/* Top */}
+              {/* TOP */}
               <div className="flex items-center gap-4 mb-6">
 
                 <div
@@ -233,7 +288,7 @@ const Skills = () => {
 
               </div>
 
-              {/* Skills */}
+              {/* SKILLS */}
               <div className="flex flex-wrap gap-4">
 
                 {group.skills.map((skill, idx) => {
@@ -245,7 +300,7 @@ const Skills = () => {
 
                     <div key={idx} className="relative">
 
-                      {/* Skill Button */}
+                      {/* BUTTON */}
                       <motion.button
 
                         whileHover={{
@@ -306,7 +361,7 @@ const Skills = () => {
 
                       </motion.button>
 
-                      {/* Floating Info */}
+                      {/* INFO BOX */}
                       <AnimatePresence>
 
                         {isActive && (
